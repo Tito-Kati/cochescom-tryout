@@ -15,7 +15,7 @@ Indicaciones
 ------------
 Se trata de una página sencilla donde se nos muestran algunos coches que nos pueden interesar.
 
-Puedes obtener el listado de coches a través del siguiente endpoint: https://623b12c746a692bd844dea44.mockapi.io/coolCar. Aquí tienes toda la información de los coches que necesitas y si es favorito o no, ya que solo debemos marcar el icono del corazón en aquellos que sean favoritos.
+Puedes obtener el listado de coches a través del siguiente endpoint: https://623b12c746a692bd844dea44.mockapi.io/coolCar. Aquí tienes toda la información de los coches que necesitas y si es favorito o no, ya que solo debemos marcar el icono del corazón en aquellos que sean favoritos. También nos gustaría que existiese la posibilidad de marcar/desmarcar como favorito en local al clickar sobre el corazón de las pastillas.
 
 Al clickar sobre cualquiera de las pastillas de los coches, se abrirá un modal con la info de ese coche: su imagen, su marca y modelo, su precio y un botón de "Comprar", que no tiene funcionalidad alguna.
 
