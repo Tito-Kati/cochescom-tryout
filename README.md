@@ -1,34 +1,38 @@
-# technical-frontend-test-react
-Prueba técnica FRONTEND DEVELOPER coches.com
-=========================================
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-Esta prueba consiste en representar el diseño que te facilitamos y aplicar ciertas funcionalidades que te detallamos a continuación.
+## Getting Started
 
-Los diseños los encontrarás en la carpeta "design". Hemos incluido también el diseño original en Sketch (carpeta sketch), pero si no dispones de él (lo más normal), también te hemos guardado las imágenes del diseño en la carpeta "image". A continuación te detallamos que encontrarás:
+First, run the development server:
 
-- "page.jpg" es la página que debes construir.
-- "modal.jpg" muestra el modal que se abrirá al pulsar sobre alguna de las pastillas de los coches.
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+```
 
-En la carpeta "assets" hemos dejado material que vas a necesitar. Imágenes como las de los coches, la del hero o nuestro logo en png, así como las fuentes en ttf.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Indicaciones
-------------
-Se trata de una página sencilla donde se nos muestran algunos coches que nos pueden interesar.
+You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-Puedes obtener el listado de coches a través del siguiente endpoint: https://623b12c746a692bd844dea44.mockapi.io/coolCar. Aquí tienes toda la información de los coches que necesitas y si es favorito o no, ya que solo debemos marcar el icono del corazón en aquellos que sean favoritos. También nos gustaría que existiese la posibilidad de marcar/desmarcar como favorito en local al clickar sobre el corazón de las pastillas.
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
-Al clickar sobre cualquiera de las pastillas de los coches, se abrirá un modal con la info de ese coche: su imagen, su marca y modelo, su precio y un botón de "Comprar", que no tiene funcionalidad alguna.
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-------------
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-Tómate la libertad de plantear el proyecto libremente y como creas que debería ser: frameworks, librerías, plugins, carpetas, ficheros, funciones, naming, etc. Ordena totalmente a tu gusto, se trata de que te sientas cómodo para trabajar. Siéntete libre de aportar lo que sepas.
+## Learn More
 
-Como ya sabes, nuestro framework es React, así que sería genial que nos demostrases tu sabiduría con él. También trabajamos con NEXT.js, Vanilla JS con ES6 y Typescript, así que no hay límites. Orienta la prueba a la tecnología con la que te sientas más cómodo trabajando.
+To learn more about Next.js, take a look at the following resources:
 
-Si tu perfil va más orientado a UI, nos gustaría mucho que la página fuese responsive y que lo adaptaras para todos los dispositivos, bajo tu criterio. No te aportamos diseño para tablet y mobile, únicamente de desktop, así que hazlo como mejor creas que debería ser. En este sentido, también siéntete libre de aplicar las tecnologías con las que te encuentres más cómodo y podamos ver lo máximo de tu manera de trabajar.
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-Estamos a tu disposición para cualquier duda que pueda surgirte ;)
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-¡Esperamos lo mejor de ti!
-¡ÁNIMO y MUCHA SUERTE!
-coches.com
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
