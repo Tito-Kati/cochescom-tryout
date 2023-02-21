@@ -1,0 +1,13 @@
+.navbar {
+  &__navbar {
+    @apply bg-white py-3 shadow-md fixed top-0 inset-x-0;
+  }
+
+  &__container {
+    @apply container mx-auto;
+  }
+
+  &__logo {
+    @apply h-6;
+  }
+}
