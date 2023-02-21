@@ -4,10 +4,14 @@
   }
 
   &__container {
-    @apply container mx-auto;
+    @apply container mx-auto text-center;
+
+    @screen sm {
+      @apply text-left;
+    }
   }
 
   &__logo {
-    @apply h-6;
+    @apply inline-block h-6;
   }
 }

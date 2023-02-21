@@ -1,0 +1,45 @@
+.hero {
+  &__hero {
+    @apply bg-primary-600 pt-24 pb-14;
+  }
+
+  &__container {
+    @apply container mx-auto gap-14 items-center;
+
+    @screen md {
+      @apply grid;
+      grid-template-areas: "title  image";
+      grid-template-columns: 1fr auto;
+    }
+
+    @screen xl {
+      @apply grid;
+      grid-template-areas: "none  title  image";
+      grid-template-columns: 1fr 2fr 1fr;
+    }
+
+    @screen 2xl {
+      @apply grid;
+      grid-template-areas: "none  title  image";
+      grid-template-columns: 1fr 3fr 1fr;
+    }
+  }
+
+  &__image {
+    @apply hidden;
+
+    @screen md {
+      @apply block;
+      grid-area: image;
+    }
+  }
+
+  &__title {
+    @apply text-white text-5xl font-bold;
+    grid-area: title;
+  }
+
+  &__subtitle {
+    @apply block font-normal text-base mt-2;
+  }
+}

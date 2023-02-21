@@ -1,6 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { Navbar } from "@/components/Navbar/Navbar";
-import { Button } from "../../Button";
 
 const meta: Meta<typeof Navbar> = {
   component: Navbar,
@@ -8,6 +7,6 @@ const meta: Meta<typeof Navbar> = {
 
 export default meta
 
-type Story = StoryObj<typeof Button>
+type Story = StoryObj<typeof Navbar>
 
 export const Default: Story = {}
