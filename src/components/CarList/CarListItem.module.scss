@@ -13,7 +13,7 @@
   }
 
   &__price {
-    @apply text-3xl font-bold text-slate-700;
+    @apply truncate text-3xl font-bold text-slate-700;
   }
 
   &__favorite {
@@ -21,7 +21,7 @@
   }
 
   &__make-and-model {
-    @apply mx-3 text-xl font-bold text-slate-600;
+    @apply mx-3 truncate text-xl font-bold text-slate-600;
   }
 
   &__version-and-fuel {
@@ -51,6 +51,6 @@
   }
 
   &__kilometres {
-    @apply justify-self-end text-sm uppercase text-slate-700;
+    @apply truncate text-right text-sm uppercase text-slate-700;
   }
 }
