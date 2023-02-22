@@ -3,8 +3,8 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx}",
-    "./src/components/**/*.{js,ts,jsx,tsx}",
+    './src/pages/**/*.{js,ts,jsx,tsx}',
+    './src/components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     fontFamily: {
@@ -83,7 +83,11 @@ module.exports = {
         900: '#0d0d0d',
       },
     },
-    extend: {},
+    extend: {
+      aspectRatio: {
+        '3/2': '3 / 2',
+      },
+    },
   },
   plugins: [],
 }

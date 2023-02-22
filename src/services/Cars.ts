@@ -1,5 +1,5 @@
 import fetch from 'node-fetch'
-import { Car } from '@/entities/Car'
+import { Car } from '@/dtos/Car'
 
 export interface ApiCar {
   id: string
@@ -40,15 +40,15 @@ function transformApiCarToDomainCar(rawCar: ApiCar): Car {
       break
   }
 
-  return new Car(
-    rawCar.id,
-    rawCar.makeAndModel,
-    rawCar.version,
-    rawCar.price,
-    fuel,
-    rawCar.location,
-    rawCar.year,
-    rawCar.km,
-    rawCar.isFavorite
-  )
+  return {
+    id: rawCar.id,
+    makeAndModel: rawCar.makeAndModel,
+    version: rawCar.version,
+    price: rawCar.price,
+    fuel: fuel,
+    location: rawCar.location,
+    registrationYear: rawCar.year,
+    kilometres: rawCar.km,
+    isFavorite: rawCar.isFavorite,
+  }
 }

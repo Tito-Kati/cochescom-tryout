@@ -1,0 +1,56 @@
+.car-list-item {
+  &__card {
+    @apply overflow-hidden rounded-xl border border-gray-50 bg-white shadow;
+  }
+
+  &__image {
+    @apply mb-2 w-full object-cover object-center aspect-3/2;
+  }
+
+  &__price-and-favorite {
+    @apply mx-3 mb-2 grid gap-3;
+    grid-template-columns: 1fr auto;
+  }
+
+  &__price {
+    @apply text-3xl font-bold text-slate-700;
+  }
+
+  &__favorite {
+
+  }
+
+  &__make-and-model {
+    @apply mx-3 text-xl font-bold text-slate-600;
+  }
+
+  &__version-and-fuel {
+    @apply mx-3 mb-3 grid items-end gap-3;
+    grid-template-columns: 1fr auto;
+  }
+
+  &__version {
+    @apply truncate font-medium text-slate-600;
+  }
+
+  &__fuel {
+    @apply text-sm text-gray-300;
+  }
+
+  &__footer {
+    @apply mx-3 mb-2 grid gap-3;
+    grid-template-columns: 3fr 2fr 3fr;
+  }
+
+  &__location {
+    @apply truncate text-sm uppercase text-slate-700;
+  }
+
+  &__registration-year {
+    @apply grid justify-items-center border-r border-l border-gray-50 text-sm text-slate-700;
+  }
+
+  &__kilometres {
+    @apply justify-self-end text-sm uppercase text-slate-700;
+  }
+}

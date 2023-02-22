@@ -1,10 +1,10 @@
 .hero {
   &__hero {
-    @apply bg-primary-600 pt-24 pb-14;
+    @apply mb-20 pt-24 pb-14 bg-primary-600;
   }
 
   &__container {
-    @apply container mx-auto gap-14 items-center;
+    @apply container mx-auto items-center gap-14;
 
     @screen md {
       @apply grid;
@@ -35,11 +35,11 @@
   }
 
   &__title {
-    @apply text-white text-5xl font-bold;
+    @apply text-5xl font-bold text-white;
     grid-area: title;
   }
 
   &__subtitle {
-    @apply block font-normal text-base mt-2;
+    @apply mt-2 block text-base font-normal;
   }
 }

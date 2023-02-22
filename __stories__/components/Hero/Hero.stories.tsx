@@ -1,5 +1,5 @@
-import { Meta, StoryObj } from "@storybook/react";
-import { Hero } from "@/components/Hero/Hero";
+import { Meta, StoryObj } from '@storybook/react'
+import { Hero } from '@/components/Hero/Hero'
 
 const meta: Meta<typeof Hero> = {
   component: Hero,

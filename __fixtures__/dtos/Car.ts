@@ -1,15 +1,15 @@
-import { ApiCar } from '@/services/Cars'
+import { Car } from '@/dtos/Car'
 
-export function DefaultApiCar (): ApiCar {
+export function Default (): Car {
   return {
     id: '3',
     makeAndModel: 'Skoda Octavia',
     version: 'Ambition Plus, 1.5 TSI',
     price: 12000,
-    fuel: 'Gasolina',
+    fuel: 'gasoline',
     location: 'Orihuela',
-    year: 2009,
-    km: 40000,
+    registrationYear: 2009,
+    kilometres: 40000,
     isFavorite: true,
   }
 }

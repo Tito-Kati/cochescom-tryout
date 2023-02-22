@@ -1,6 +1,6 @@
 .navbar {
   &__navbar {
-    @apply bg-white py-3 shadow-md fixed top-0 inset-x-0;
+    @apply fixed inset-x-0 top-0 bg-white py-3 shadow-md;
   }
 
   &__container {
