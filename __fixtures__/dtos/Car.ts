@@ -13,3 +13,17 @@ export function DefaultCar (): Car {
     isFavorite: true,
   }
 }
+
+export function NotFavoriteCar (): Car {
+  return {
+    id: '2',
+    makeAndModel: 'Smart Roadster',
+    version: 'Cabrio 82cv',
+    price: 5200,
+    fuel: 'gasoline',
+    location: 'Murcia',
+    registrationYear: 2003,
+    kilometres: 90000,
+    isFavorite: false,
+  }
+}

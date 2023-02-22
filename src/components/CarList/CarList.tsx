@@ -9,9 +9,15 @@ interface CarListProps {
 
 export const CarList: FC<CarListProps> = ({ cars }) => {
   return <div className={ styles['car-list__container'] }>
-    { cars.map(car => <CarListItem
-      key={ car.id }
-      { ...car }
-    />) }
+    <h2 className={ styles['car-list__title'] }>
+      Coches que te pueden interesar
+    </h2>
+
+    <div className={ styles['car-list__list'] }>
+      { cars.map(car => <CarListItem
+        key={ car.id }
+        { ...car }
+      />) }
+    </div>
   </div>
 }
