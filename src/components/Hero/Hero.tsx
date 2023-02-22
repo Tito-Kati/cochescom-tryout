@@ -1,5 +1,5 @@
-import {FC} from "react";
-import styles from "./Hero.module.scss";
+import { FC } from 'react'
+import styles from './Hero.module.scss'
 
 export const Hero: FC = () => {
   return (

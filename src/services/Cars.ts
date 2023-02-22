@@ -1,5 +1,5 @@
-import fetch from "node-fetch";
-import {Car} from "@/entities/Car";
+import fetch from 'node-fetch'
+import { Car } from '@/entities/Car'
 
 export interface ApiCar {
   id: string
@@ -23,20 +23,21 @@ export async function getCars() {
 
 function transformApiCarToDomainCar(rawCar: ApiCar): Car {
   let fuel: Car['fuel']
+
   switch (rawCar.fuel) {
-    case "Diesel":
-    case "Diésel":
+    case 'Diesel':
+    case 'Diésel':
       fuel = 'diesel'
-      break;
-    case "Eléctrico":
+      break
+    case 'Eléctrico':
       fuel = 'electric'
-      break;
-    case "Gasolina":
+      break
+    case 'Gasolina':
       fuel = 'gasoline'
-      break;
-    case "Híbrido":
+      break
+    case 'Híbrido':
       fuel = 'hybrid'
-      break;
+      break
   }
 
   return new Car(

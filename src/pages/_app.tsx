@@ -1,7 +1,7 @@
 import '@/styles/globals.scss'
 import type { AppProps } from 'next/app'
-import Head from "next/head";
-import { Navbar } from "@/components/Navbar/Navbar";
+import Head from 'next/head'
+import { Navbar } from '@/components/Navbar/Navbar'
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -15,7 +15,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
       <Navbar />
 
-      <Component {...pageProps} />
+      <Component { ...pageProps } />
     </>
   )
 }

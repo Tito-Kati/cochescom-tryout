@@ -8,18 +8,18 @@ export class Car {
     readonly location: string,
     readonly registrationYear: number,
     readonly kilometres: number,
-    readonly isFavorite: boolean,
+    readonly isFavorite: boolean
   ) {}
 
   get humanFuel () {
     switch (this.fuel) {
-      case "diesel":
+      case 'diesel':
         return 'Diésel'
-      case "hybrid":
+      case 'hybrid':
         return 'Híbrido'
-      case "gasoline":
+      case 'gasoline':
         return 'Gasolina'
-      case "electric":
+      case 'electric':
         return 'Eléctrico'
     }
   }
