@@ -1,6 +1,6 @@
 import { Car } from '@/dtos/Car'
 
-export function Default (): Car {
+export function DefaultCar (): Car {
   return {
     id: '3',
     makeAndModel: 'Skoda Octavia',

@@ -1,12 +1,10 @@
-import { Car } from '@/dtos/Car'
+import { Car, formatKilometers, formatPrice, translateFuel } from '@/dtos/Car'
 import { FC } from 'react'
 import styles from './CarListItem.module.scss'
+import { FuelIcon } from '@/components/CarList/FuelIcon'
+import { FavoriteButton } from '@/components/CarList/FavoriteButton'
 
-interface CarListItemProps {
-  car: Car
-}
-
-export const CarListItem: FC<CarListItemProps> = ({ car }) => {
+export const CarListItem: FC<Car> = (car) => {
   return <div className={ styles['car-list-item__card'] }>
     <img
       className={ styles['car-list-item__image'] }
@@ -16,11 +14,11 @@ export const CarListItem: FC<CarListItemProps> = ({ car }) => {
 
     <div className={ styles['car-list-item__price-and-favorite'] }>
       <span className={ styles['car-list-item__price'] }>
-        { car.price }
+        { formatPrice(car.price) }
       </span>
 
       <span className={ styles['car-list-item__favorite'] }>
-        { car.isFavorite ? '<3' : '</3' }
+        <FavoriteButton isFavorite={ car.isFavorite } />
       </span>
     </div>
 
@@ -34,7 +32,8 @@ export const CarListItem: FC<CarListItemProps> = ({ car }) => {
       </span>
 
       <span className={ styles['car-list-item__fuel'] }>
-        { car.fuel }
+        <FuelIcon fuel={ car.fuel } />
+        { translateFuel(car.fuel) }
       </span>
     </div>
 
@@ -48,7 +47,7 @@ export const CarListItem: FC<CarListItemProps> = ({ car }) => {
       </span>
 
       <span className={ styles['car-list-item__kilometres'] }>
-        { car.kilometres }
+        { formatKilometers(car.kilometres) }
       </span>
     </div>
   </div>

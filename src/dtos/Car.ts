@@ -9,3 +9,24 @@ export interface Car {
   kilometres: number,
   isFavorite: boolean
 }
+
+export function formatPrice(price: Car['price']): string {
+  return `${price.toLocaleString()} €`
+}
+
+export function formatKilometers(kilometres: Car['kilometres']): string {
+  return `${kilometres.toLocaleString()} km`
+}
+
+export function translateFuel(fuel: Car['fuel']): string {
+  switch (fuel) {
+    case 'diesel':
+      return 'Diésel'
+    case 'hybrid':
+      return 'Híbrido'
+    case 'gasoline':
+      return 'Gasolina'
+    case 'electric':
+      return 'Eléctrico'
+  }
+}

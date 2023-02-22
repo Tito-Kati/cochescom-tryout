@@ -11,7 +11,7 @@ export const CarList: FC<CarListProps> = ({ cars }) => {
   return <div className={ styles['car-list__container'] }>
     { cars.map(car => <CarListItem
       key={ car.id }
-      car={ car }
+      { ...car }
     />) }
   </div>
 }

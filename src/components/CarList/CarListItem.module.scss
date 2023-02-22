@@ -34,7 +34,7 @@
   }
 
   &__fuel {
-    @apply text-sm text-gray-300;
+    @apply flex gap-1 text-sm text-gray-300;
   }
 
   &__footer {
