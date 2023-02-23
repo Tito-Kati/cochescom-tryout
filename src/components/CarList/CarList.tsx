@@ -4,10 +4,11 @@ import { CarListItem } from '@/components/CarList/CarListItem'
 import styles from './CarList.module.scss'
 
 interface CarListProps {
-  cars: Car[]
+  cars: Car[],
+  setFavorite: (carId: Car['id']) => void
 }
 
-export const CarList: FC<CarListProps> = ({ cars }) => {
+export const CarList: FC<CarListProps> = ({ cars, setFavorite }) => {
   return <div className={ styles['car-list__container'] }>
     <h2 className={ styles['car-list__title'] }>
       Coches que te pueden interesar
@@ -17,6 +18,7 @@ export const CarList: FC<CarListProps> = ({ cars }) => {
       { cars.map(car => <CarListItem
         key={ car.id }
         { ...car }
+        setFavorite={ () => setFavorite(car.id) }
       />) }
     </div>
   </div>

@@ -1,4 +1,3 @@
-import fetch from 'node-fetch'
 import { Car } from '@/dtos/Car'
 
 export interface ApiCar {
@@ -13,10 +12,18 @@ export interface ApiCar {
   isFavorite: boolean
 }
 
-export async function getCars() {
-  const response = await fetch('https://623b12c746a692bd844dea44.mockapi.io/coolCar')
+type LocalFavoriteList = Record<Car['id'], Car['isFavorite']>
 
-  const rawCars: ApiCar[] = await response.json()
+export async function getCars() {
+  let rawCars: ApiCar[]
+
+  try {
+    const response = await fetch('https://623b12c746a692bd844dea44.mockapi.io/coolCar')
+
+    rawCars = await response.json()
+  } catch (_) {
+    return []
+  }
 
   return rawCars.map(transformApiCarToDomainCar)
 }
@@ -51,4 +58,22 @@ function transformApiCarToDomainCar(rawCar: ApiCar): Car {
     kilometres: rawCar.km,
     isFavorite: rawCar.isFavorite,
   }
+}
+
+export function updateFavoriteWithLocaleStorage(cars: Car[]): Car[] {
+  const localFavoriteList: LocalFavoriteList = JSON.parse(localStorage.getItem('favoriteCars') ?? '{}')
+
+  return cars.map((car) => {
+    car.isFavorite = localFavoriteList[car.id] ?? car.isFavorite
+
+    return car
+  })
+}
+
+export function storeFavoriteOnLocaleStorage(carId: Car['id'], isFavorite: Car['isFavorite']) {
+  const favoriteCars = JSON.parse(localStorage.getItem('favoriteCars') ?? '{}')
+
+  favoriteCars[carId] = isFavorite
+
+  localStorage.setItem('favoriteCars', JSON.stringify(favoriteCars))
 }

@@ -1,5 +1,13 @@
 .favorite-button {
   &__icon {
-    @apply inline h-5;
+    @apply inline h-5 transition-all;
+
+    &:hover, &:focus {
+      @apply scale-125 opacity-80;
+    }
+
+    &:active {
+      @apply scale-150 opacity-100;
+    }
   }
 }

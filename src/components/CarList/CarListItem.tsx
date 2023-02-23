@@ -4,7 +4,11 @@ import styles from './CarListItem.module.scss'
 import { FuelIcon } from '@/components/CarList/FuelIcon'
 import { FavoriteButton } from '@/components/CarList/FavoriteButton'
 
-export const CarListItem: FC<Car> = (car) => {
+type CarListItemProps = Car & {
+  setFavorite: () => void
+}
+
+export const CarListItem: FC<CarListItemProps> = ({ setFavorite, ...car }) => {
   return <div className={ styles['car-list-item__card'] }>
     <img
       className={ styles['car-list-item__image'] }
@@ -18,7 +22,10 @@ export const CarListItem: FC<Car> = (car) => {
       </span>
 
       <span className={ styles['car-list-item__favorite'] }>
-        <FavoriteButton isFavorite={ car.isFavorite } />
+        <FavoriteButton
+          isFavorite={ car.isFavorite }
+          onClick={ setFavorite }
+        />
       </span>
     </div>
 
