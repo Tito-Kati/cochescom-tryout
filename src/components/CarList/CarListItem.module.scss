@@ -3,8 +3,16 @@
     @apply overflow-hidden rounded-xl border border-gray-50 bg-white shadow;
   }
 
+  &__open-modal-button {
+    @apply mb-2 w-full overflow-hidden aspect-3/2;
+  }
+
   &__image {
-    @apply mb-2 w-full object-cover object-center aspect-3/2;
+    @apply h-full w-full object-cover object-center transition-all;
+
+    &:hover, &:focus {
+      @apply scale-105 opacity-90;
+    }
   }
 
   &__price-and-favorite {

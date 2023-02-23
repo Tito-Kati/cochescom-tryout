@@ -1,0 +1,45 @@
+.modal {
+  &__backdrop {
+    @apply fixed inset-0 grid hidden cursor-pointer place-items-center bg-black/70 opacity-0;
+
+    @keyframes fade {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 100%;
+      }
+    }
+
+    &--open {
+      @apply grid opacity-100;
+      animation: fade 175ms linear;
+    }
+  }
+
+  &__modal {
+    @apply relative rounded bg-white px-28 py-24 cursor-default;
+    animation: popup 175ms linear;
+
+    @keyframes popup {
+      from {
+        transform: scale(90%);
+      }
+      to {
+        transform: scale(100%);
+      }
+    }
+  }
+
+  &__close-button {
+    @apply absolute top-7 right-14 transition-all;
+
+    &:hover, &focus {
+      @apply scale-110 opacity-80;
+    }
+  }
+
+  &__close-icon {
+    @apply w-8;
+  }
+}

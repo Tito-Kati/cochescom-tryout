@@ -87,6 +87,9 @@ module.exports = {
       aspectRatio: {
         '3/2': '3 / 2',
       },
+      transitionDuration: {
+        DEFAULT: '350ms',
+      },
     },
   },
   plugins: [],

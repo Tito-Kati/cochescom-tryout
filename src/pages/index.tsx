@@ -24,7 +24,7 @@ const Home: NextPage<HomePageProps> = ({ cars }) => {
 
   useEffect(() => {
     setCarList(updateFavoriteWithLocaleStorage(cars))
-  }, [])
+  }, [cars])
 
   const setFavorite = (carId: Car['id']) => {
     const carIndex = carList.findIndex(car => car.id === carId)

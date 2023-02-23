@@ -4,17 +4,21 @@ import styles from './CarListItem.module.scss'
 import { FuelIcon } from '@/components/CarList/FuelIcon'
 import { FavoriteButton } from '@/components/CarList/FavoriteButton'
 
-type CarListItemProps = Car & {
+export type CarListItemProps = Car & {
   setFavorite: () => void
 }
 
 export const CarListItem: FC<CarListItemProps> = ({ setFavorite, ...car }) => {
   return <div className={ styles['car-list-item__card'] }>
-    <img
-      className={ styles['car-list-item__image'] }
-      src={ `/cars/${car.id}.webp` }
-      alt={ `Fotografía del vehículo ${car.makeAndModel} en venta.` }
-    />
+    <button
+      className={ styles['car-list-item__open-modal-button'] }
+    >
+      <img
+        className={ styles['car-list-item__image'] }
+        src={ `/cars/${car.id}.webp` }
+        alt={ `Fotografía del vehículo ${car.makeAndModel} en venta.` }
+      />
+    </button>
 
     <div className={ styles['car-list-item__price-and-favorite'] }>
       <span className={ styles['car-list-item__price'] }>
