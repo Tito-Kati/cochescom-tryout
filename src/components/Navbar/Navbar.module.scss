@@ -1,6 +1,6 @@
 .navbar {
   &__navbar {
-    @apply sticky inset-x-0 top-0 bg-white py-3 shadow-md;
+    @apply sticky inset-x-0 top-0 bg-white py-3 shadow-md z-navbar;
   }
 
   &__container {

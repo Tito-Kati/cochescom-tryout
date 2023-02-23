@@ -1,5 +1,14 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 
+function classNamesToZIndex (classNames) {
+  return classNames.reduce((zIndexes, className, index) => {
+    zIndexes[className] = index + 1
+
+    return zIndexes
+  }, {})
+}
+
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -7,6 +16,11 @@ module.exports = {
     './src/components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
+    zIndex: classNamesToZIndex([
+      'navbar',
+      'modal-backdrop',
+      'modal-close-button',
+    ]),
     fontFamily: {
       sans: ['"DM Sans"', ...defaultTheme.fontFamily.sans],
     },

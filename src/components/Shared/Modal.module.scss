@@ -1,6 +1,6 @@
 .modal {
   &__backdrop {
-    @apply fixed inset-0 grid hidden cursor-pointer place-items-center bg-black/70 opacity-0;
+    @apply fixed inset-0 grid hidden cursor-pointer place-items-center bg-black/70 p-4 opacity-0 z-modal-backdrop;
 
     @keyframes fade {
       from {
@@ -18,7 +18,7 @@
   }
 
   &__modal {
-    @apply relative rounded bg-white px-28 py-24 cursor-default;
+    @apply relative cursor-default rounded bg-white p-8;
     animation: popup 175ms linear;
 
     @keyframes popup {
@@ -29,10 +29,18 @@
         transform: scale(100%);
       }
     }
+
+    @screen lg {
+      @apply px-28 py-24;
+    }
   }
 
   &__close-button {
-    @apply absolute top-7 right-14 transition-all;
+    @apply absolute top-2 right-4 transition-[transform,opacity] z-modal-close-button;
+
+    @screen lg {
+      @apply top-7 right-14;
+    }
 
     &:hover, &focus {
       @apply scale-110 opacity-80;
@@ -40,6 +48,10 @@
   }
 
   &__close-icon {
-    @apply w-8;
+    @apply w-4;
+
+    @screen lg {
+      @apply w-8;
+    }
   }
 }

@@ -1,17 +1,22 @@
 import { Car, formatKilometers, formatPrice, translateFuel } from '@/dtos/Car'
-import { FC } from 'react'
+import { FC, useState } from 'react'
 import styles from './CarListItem.module.scss'
 import { FuelIcon } from '@/components/CarList/FuelIcon'
 import { FavoriteButton } from '@/components/CarList/FavoriteButton'
+import { Modal } from '@/components/Shared/Modal'
+import { CarModal } from '@/components/CarList/CarModal'
 
 export type CarListItemProps = Car & {
   setFavorite: () => void
 }
 
 export const CarListItem: FC<CarListItemProps> = ({ setFavorite, ...car }) => {
+  const [modalIsOpen, setModalIsOpen] = useState(false)
+
   return <div className={ styles['car-list-item__card'] }>
     <button
       className={ styles['car-list-item__open-modal-button'] }
+      onClick={ () => setModalIsOpen(true) }
     >
       <img
         className={ styles['car-list-item__image'] }
@@ -61,5 +66,9 @@ export const CarListItem: FC<CarListItemProps> = ({ setFavorite, ...car }) => {
         { formatKilometers(car.kilometres) }
       </span>
     </div>
+
+    <Modal isOpen={ modalIsOpen } onClose={ () => setModalIsOpen(false) }>
+      <CarModal { ...car } />
+    </Modal>
   </div>
 }
