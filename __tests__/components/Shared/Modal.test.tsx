@@ -1,4 +1,4 @@
-import { fireEvent, render, screen, waitFor } from '@testing-library/react'
+import { fireEvent, render, screen } from '@testing-library/react'
 import { Modal } from '@/components/Shared/Modal'
 
 describe('src/components/Shared/Modal.tsx', () => {
@@ -24,7 +24,7 @@ describe('src/components/Shared/Modal.tsx', () => {
         Content
       </Modal>)
 
-      await waitFor(() => expect(screen.getByTestId('backdrop')).toHaveClass('modal__backdrop--open'))
+      expect(screen.getByTestId('backdrop')).toHaveClass('modal__backdrop--open')
     })
   })
 

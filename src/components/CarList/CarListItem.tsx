@@ -17,6 +17,7 @@ export const CarListItem: FC<CarListItemProps> = ({ setFavorite, ...car }) => {
     <button
       className={ styles['car-list-item__open-modal-button'] }
       onClick={ () => setModalIsOpen(true) }
+      data-testid="car-image-button"
     >
       <img
         className={ styles['car-list-item__image'] }
@@ -67,7 +68,10 @@ export const CarListItem: FC<CarListItemProps> = ({ setFavorite, ...car }) => {
       </span>
     </div>
 
-    <Modal isOpen={ modalIsOpen } onClose={ () => setModalIsOpen(false) }>
+    <Modal
+      isOpen={ modalIsOpen }
+      onClose={ () => setModalIsOpen(false) }
+    >
       <CarModal { ...car } />
     </Modal>
   </div>

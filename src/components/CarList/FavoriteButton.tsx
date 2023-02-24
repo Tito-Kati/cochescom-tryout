@@ -10,6 +10,7 @@ interface FavoriteButtonProps {
 export const FavoriteButton: FC<FavoriteButtonProps> = ({ isFavorite, onClick }) => {
   return  <button
     onClick={ onClick }
+    data-testid="favorite-button"
   >
     <img
       className={ styles['favorite-button__icon'] }
